@@ -2,10 +2,12 @@ import React, {Component, Fragment} from 'react';
 import Modal from "./components/UI/Modal/Modal";
 import Button from "./components/UI/Button/Button";
 import ButtonGroup from "./components/UI/Button/ButtonGroup";
+import Alert from "./components/UI/Alert/Alert";
 
 class App extends Component {
   state = {
     modalShow: false,
+    showAlert: true,
   };
   showModal = () => {
     this.setState({modalShow: true});
@@ -16,7 +18,9 @@ class App extends Component {
   continue = () => {
       alert('You continued');
   };
-
+  closeAlert = ()=> {
+    this.setState({showAlert: false})
+  };
     render() {
         const buttons = [
             {type: 'primary', label: 'Continue', clicked: this.continue},
@@ -33,6 +37,14 @@ class App extends Component {
                 >
                     <p>Modal content</p>
                 </Modal>
+                <hr/>
+                <p>Remove 'clickDismissible' option to dismiss alerts by clicking on a 'x' button :)</p>
+
+                <Alert dismiss={this.closeAlert}
+                       type='success'
+                       show={this.state.showAlert}>
+                    <span>This alert is dismissible by clicking</span>
+                </Alert>
             </Fragment>
 
         );
