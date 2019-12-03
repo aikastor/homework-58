@@ -41,6 +41,7 @@ class App extends Component {
                 <p>Remove 'clickDismissible' option to dismiss alerts by clicking on a 'x' button :)</p>
 
                 <Alert dismiss={this.closeAlert}
+                       clickDismissible
                        type='success'
                        show={this.state.showAlert}>
                     <span>This alert is dismissible by clicking</span>

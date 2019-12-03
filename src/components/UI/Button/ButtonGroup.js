@@ -3,7 +3,7 @@ import Button from "./Button";
 
 const ButtonGroup = (props) => {
     return (
-       props.buttons.map(btn=>(
+       props.buttons.map(btn =>(
            <Button
                key={btn.label}
                 className={['btn btn', btn.type].join('-')}
