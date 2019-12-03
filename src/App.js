@@ -42,7 +42,8 @@ class App extends Component {
 
                 <Alert dismiss={this.closeAlert}
                        clickDismissible
-                       type='success'
+                       type='success'  /*danger, warning, primary
+                        are also available*/
                        show={this.state.showAlert}>
                     <span>This alert is dismissible by clicking</span>
                 </Alert>
